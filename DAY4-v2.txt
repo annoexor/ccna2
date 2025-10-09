@@ -1,0 +1,349 @@
+
+Camera 6 MAC Address (fa0/6):   001a.070b.472e
+Camera 8 MAC Address (fa0/8):   001a.0706.c302
+Ephone 1 MAC Address (fa0/5):   203a.0782.bd3b
+Ephone 2 MAC Address (fa0/7):   ccd8.c1fb.1519
+
+For an SSH connection to be established, the device must have:
+    - a non-default hostname         hostname coreBaba62
+    - a domain name                  ip domain name day1lab.com (10.234.200.123 Startek.com)
+    - a local user account           username admin privilege 15 secret pass
+    - generated crypto keys          crypto key generate rsa modulus 2048
+    - SSH enabled                    ip ssh version 2
+    - enable remote access           transport input all (ssh telnet) if incase need espicific.
+    - enable remote user/pass login  login local
+
+
+PUKI- para manbasa yung naka enrypted pass
+
+ans
+ssh admin@10.62.1.2
+ssh admin@10.62.1.4
+ssh admin@10.62.100.8
+ssh admin@10.62.62.1
+
+ansible-playbook run_all.yml
+ansible ctaas,cbaba,cucm,edge - ping
+ cat /root/.ssh/known_hosts 
+
+csr 
+name:firewall 
+
+CIIB- sh ip int brief
+sir- sh ip route
+
+
+setup firewall-
+3 type
+1. next gen with AI new learning L2/L7
+2.statefull application firewall L2/L7
+3. packet filter firewall L3/L4 +pfsense 
+
+
+
+later 2 FRAME > source distination IP 
+
+number access list
+
+config t
+no access-list 1
+no access-list 1 DENY 66.254.0.0 0.0.255.255
+no access-list 1 deny 161.49.0.0 0.0.255.255
+no access-list 1 DENY 104.21.0.0 0.0.255.255
+no access-list 1 DENY 68.235.0.0 0.0.255.255
+no access-list 1 DENY 104.17.0.0 0.0.255.255
+no access-list 1 DENY 88.208.0.0 0.0.255.255
+no access-list 1 DENY 208.77.0.0 0.0.255.255
+no access-list 1 DENY 172.67.0.0 0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group NOPORN in
+end
+
+UNLOCK THE ACCESS LIST
+Config t
+Int Gi 1
+ no ip access-group 1 in
+end
+
+
+
+
+sh ip access-lists 
+
+
+taga sira no access-list 1
+taga unlock ip access-group NOPORN in
+
+
+
+NO SCHOOLS
+|
+
+config t
+NO ip access-list standard NOISKUL
+ip access-list standard NOISKUL
+DENY  172.67.0.0  0.0.255.255
+DENY  172.66.0.0  0.0.255.255
+DENY  50.6.0.0 0.0.255.255
+DENY  50.6.0.0  0.0.255.255
+DENY  50.6.0.0  0.0.255.255
+DENY  184.168.0.0 0.0.255.255
+DENY  155.137.0.0  0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group NOISKUL in
+end
+
+
+    
+ping www.feu.edu.ph  
+ping www.ue.edu.ph  
+
+
+
+
+config t
+NO ip access-list standard NOISKUL
+ip access-list standard NOISKUL
+DENY  172.66.0.0  0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group NOISKUL in
+end
+
+
+
+www.thepiratebay.org     
+www.limetorrents.com      
+www.freeanimeonline.com     
+www.torlock2.com   
+www.hentaisites.com    
+www.iptorrents.com    
+
+con
+
+config t
+NO ip access-list standard NOISKUL
+ip access-list standard NOISKUL
+DENY 162.159.0.0  0.0.255.255
+DENY 104.21.0.0 0.0.255.255
+DENY 104.21.0.0 0.0.255.255
+DENY 84.32.0.0 0.0.255.255
+DENY 104.21.0.0 0.0.255.255
+DENY 76.223.0.0 0.0.255.255
+DENY 13.248.0.0 0.0.255.255
+DENY 104.21.0.0 0.0.255.255
+DENY 104.21.0.0 0.0.255.255
+DENY 104.26.0.0 0.0.255.255
+DENY 95.211.0.0 0.0.255.255
+DENY 172.67.0.0  0.0.255.255
+DENY 50.6.0.0 0.0.255.255
+DENY 50.6.0.0  0.0.255.255
+DENY 50.6.0.0  0.0.255.255
+DENY 184.168.0.0 0.0.255.255
+DENY 155.137.0.0  0.0.255.255
+Permit Any
+Int Gi 1
+ ip access-group NOISKUL in
+end
+
+Permit Any
+Int Gi 0/0/1
+ ip access-group NOCLASSMATE1 in
+ end
+
+
+Int Gi 0/0/1
+no ip access-group NOCLASSMATE1 in
+ end
+
+3 knds of cybersecurity Eng.
+bobo/tanga    superqualified/magaling     bangag/Paranoid
+				         BLOCK/ PING LAHAT
+					 allow lahat pero: Honey
+
+
+HOW AN INTERNET HACK .ATTACK HAPPENS.
+
+source/hacker          destination/Victim
+cmd- show control-plane host open-ports
+
+
+papadala ng SYN packet
+
+send ng SYN/ATTCK
+ pag walang firewall pasok
+
+to hack need to this 
+source ip
+destine ip
+source port
+destination port
+
+open wireshark
+
+tcp.flags.syn == 1 && tcp.flags.ack ==1
+
+tcp.flags.syn == 1 || tcp.flags.ack ==1
+
+
+BUILDING FIREWALL
+
+
+
+ www.bet10.com 192.168.103.10
+ www.bet11.com 192.168.103.11
+
+kapag website dpat ang bukas ay 53tcp 80tcp 443tcp
+
+silent scan C:\>nmap -Pn -v www.bet11.com ng 
+
+BUILDING FIREWALL
+
+firewall policy (Magci formula)
+(Magic formula) *protocol                 hacker            victim port:
+ permit/deny 
+kapag bwal ang ping ICMP, TCP, UDP ,IP      any:0.0.0.0       web10, 11
+
+create a firewallpolicy :FP1 conditions:
+bet10.com http,https.= 3 lines
+vet11.comn open ssh,dns,https, =3lines =6 lines total
+ FP1 (firewall policy1)
+ ang ICMP ay walang later.
+ port - eq
+
+config t
+NO ip access-list extended FP1
+ip access-list extended FP1
+permit icmp any host bet10.com
+permit tcp any host bet10.com eq 80
+permit tcp any host bet10.com eq 443
+permit tcp any host bet11.com eq 22
+permit tcp any host bet11.com eq 53
+permit tcp any host bet11.com eq 443
+int gi 3
+description DMZzone
+IP access-group FP1 in
+
+*/*********************************
+create a firewallpolicy :FP1 conditions:
+bet10.com ssh,dns,http,https
+bet11.com (voipServer) open h323,sccp,sip,SipTLs
+
+
+config t
+NO ip access-list extended FP2
+ip access-list extended FP2
+permit tcp any host bet10.com eq 22
+permit tcp any host bet10.com eq 53
+permit tcp any host bet10.com eq 80
+permit tcp any host bet10.com eq 443
+permit tcp any host bet11.com eq 1720
+permit tcp any host bet11.com eq 2000
+permit tcp any host bet11.com eq 5060
+permit tcp any host bet11.com eq 5061
+int gi 3
+description DMZzone 
+IP access-group FP2 in
+
+
+ config t 
+ip host bet10.com 192.168.103.10
+ip host bet11.com 192.168.103.11
+no ip host www.bet10.com 192.168.103.10
+no ip host www.bet11.com 192.168.103.11
+no ip host www.web310.com 192.168.103.10
+no ip host www.web311.com 192.168.103.11
+
+
+**********************************************
+create a firewallpolicy :FP1 conditions:
+bet10.com open dns,https,sscp,sip
+bet11.com open ssh,http,h323,sipTls =lines
+
+
+
+config t
+NO ip access-list extended FP3
+ip access-list extended FP3
+permit tcp any host bet10.com eq 53
+permit tcp any host bet10.com eq 80
+permit tcp any host bet10.com eq 2000
+permit tcp any host bet10.com eq 5060
+permit tcp any host bet11.com eq 22
+permit tcp any host bet11.com eq 80
+permit tcp any host bet11.com eq 1720
+permit tcp any host bet11.com eq 5061
+int gi 3
+description DMZzone 
+IP access-group FP3 in
+
+
+Config t
+int gi 3
+NO ip access-list extended FP3
+end
+
+*******************************************
+
+create a firewallpolicy :FP3
+bet10.com open http,https
+bet11.com open ssh,dns,sip
+
+
+
+config t
+NO ip access-list extended FP3
+ip access-list extended FP3
+permit tcp any host bet10.com eq 80
+permit tcp any host bet10.com eq 443
+permit tcp any host bet11.com eq 22
+permit tcp any host bet11.com eq 53
+permit tcp any host bet11.com eq 5060
+int gi 3
+description DMZzone 
+IP access-group FP3 in
+***********************
+PROXT (PAT) port address translation
+
+
+config t
+no access-list 8
+access-list 8 permit any
+Int Gi 3
+ ip nat Inside
+Int gi 1
+ ip nat Outside
+IP Nat inside source static tcp 192.168.103.21 80 208.8.8.51 80
+IP Nat inside source static tcp 192.168.103.21 443 208.8.8.51 443
+IP Nat inside source static tcp 192.168.103.22 80 208.8.8.51 8080
+IP Nat inside source static tcp 192.168.103.23 443 208.8.8.51 8443
+IP nat inside source list 8 int gi 1 Overload
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
